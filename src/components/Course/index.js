@@ -6,7 +6,6 @@ export default class CourseCard extends React.Component {
 
     getStarRate (rate) {
         let stars = []
-
         const [int, decimal ] = rate.split('.')
 
         for (let i = 1; i <= parseInt(int); i++) {
@@ -29,7 +28,6 @@ export default class CourseCard extends React.Component {
 
     render () {
       const { time, name, rate, img, price } = this.props
-
       return ( 
           <div className='card-container'
           >

@@ -3,6 +3,11 @@ import './App.css'
 import Navbar from './components/Navbar'
 import CourseCard from './components/Course'
 
+import { ConnectedRouter } from 'react-router-redux'
+import { createBrowserHistory } from 'history'
+import StoreWrapper from './StoreWrapper'
+import Courses from '../src/pages/courses'
+
 const courses = [<CourseCard 
   price='12.99$'
   rate='4.5'
@@ -49,10 +54,10 @@ const courses = [<CourseCard
 function App() {
   return (
     <div className="App">
-          <Navbar />
-          <div className="course-container">
-           {courses} 
-          </div>
+        <StoreWrapper>
+            <Navbar />
+            <Courses />
+        </StoreWrapper>
     </div>
   );
 }
