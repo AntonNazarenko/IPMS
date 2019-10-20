@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.App {
+  text-align: center;
+  background-color: #202040;
+  min-height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.course-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
