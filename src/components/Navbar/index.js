@@ -1,6 +1,7 @@
 import  React from 'react'
 import { Icon } from 'react-fa'
 import styles from './index.css'
+import { Link } from 'react-router-dom'
 
 export default class Navbar extends  React.Component {
     render () {

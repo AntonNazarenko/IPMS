@@ -1,0 +1,11 @@
+input {
+    outline: none;
+    background: #202060;
+    color: white;
+    border: none;
+    padding: 5px;
+}
+
+.course-search {
+    margin-top: 20px;
+}
