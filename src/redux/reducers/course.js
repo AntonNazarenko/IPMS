@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 function getInitialState() {
     return [
         {
@@ -25,11 +26,11 @@ function getInitialState() {
 }
 
 function reducer(state = getInitialState(), action = {}) {
-    const { type, payload = {} } = action
+    const { type } = action
     switch (type) {
       
       default: {
-
+        
         return getInitialState()
       }
     }

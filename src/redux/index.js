@@ -1,4 +1,5 @@
-import { createStore, applyMiddleware, compose } from 'redux'
+/* eslint-disable no-unused-vars */
+import { createStore } from 'redux'
 
 import reducer from './reducers'
 import actions from './actions'
