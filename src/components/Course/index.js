@@ -42,13 +42,14 @@ export default class CourseCard extends React.Component {
 
     render () {
       const { time, name, rate, img, price } = this.props
+      const { redirect, path } = this.state
       return ( 
           <div className='card-container'
             onClick={()=>this.handleClick(name)}
           >
               {
-                  this.state.redirect ? 
-                  <Redirect  to={`/courses/${this.state.path}`}/>:
+                  redirect ? 
+                  <Redirect  to={`/course/${path}`}/>:
                   null
               }
               <div className="card-image">
