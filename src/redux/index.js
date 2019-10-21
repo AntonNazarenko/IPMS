@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import { createStore } from 'redux'
 
@@ -12,6 +13,7 @@ export function configureStore(
 
   const store = createStore(
     reducer(optionalReducers),
+    // eslint-disable-next-line no-underscore-dangle 
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   )
 

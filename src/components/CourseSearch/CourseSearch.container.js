@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import CourseSearchView from './CourseSearchView'
 import { SearchCourse } from '../../redux/actions/course'
 
-const mapStateToProps = (state = {}, ownProps = {}) => {
+const mapStateToProps = (state = {}) => {
    const { course } = state
     return {
         courses: course

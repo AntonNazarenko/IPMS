@@ -3,6 +3,7 @@
   "plugins": ["prettier"],
   "rules": {
     "semi": ["error", "never"],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]s
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prefer-stateless-function": [0, { "ignorePureComponents": 1 }]
   }
 }
