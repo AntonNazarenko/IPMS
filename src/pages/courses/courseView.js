@@ -1,39 +1,38 @@
 import React from 'react'
 import CourseCard from '../../components/Course'
+import CourseSearch from '../../components/CourseSearch'
 
 export default class CourseView  extends React.Component{
     
-    constructor(props) {
-        super(props)
-        this.courses = []
-    }
-
     prepareCourses() {
         const { 
-            courses
+            courses = {}
         } = this.props
-
-        courses.forEach(course => {
-            const { price, img, name, rate, time } = course
-
+        const coursesArray = courses.courses
+        this.courses = []
+        coursesArray.forEach(course => {
+            const { price, img, name, rate, time, visible } = course
+            if (!visible) return
             this.courses.push(
-            <CourseCard
-                price = { price }
-                img = { img }
-                name = { name }
-                rate = { rate }
-                time = { time }
-            />
-            )
+              <CourseCard
+                price={price}
+                img={img}
+                name={name}
+                rate={rate}
+                time={time}
+              />)
         })
     }
 
     render() {
         this.prepareCourses()
         return (
+          <>
+            <CourseSearch />
             <div className="course-container">
-                {this.courses} 
+              {this.courses} 
             </div>
+          </>
         )
     }
 }
