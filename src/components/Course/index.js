@@ -1,8 +1,22 @@
 import React from 'react'
 import styles from './index.css'
 import { Icon } from 'react-fa'
-
+import { Redirect } from 'react-router' 
 export default class CourseCard extends React.Component {
+
+    state = {
+        redirect: false,
+        path: ''
+    }
+
+    handleClick (name) {
+        name = name.split(' ').join('-')
+        console.log(name)
+        this.setState({
+            redirect: true,
+            path: name,
+        })
+    }
 
     getStarRate (rate) {
         let stars = []
@@ -28,9 +42,16 @@ export default class CourseCard extends React.Component {
 
     render () {
       const { time, name, rate, img, price } = this.props
+      const { redirect, path } = this.state
       return ( 
           <div className='card-container'
+            onClick={()=>this.handleClick(name)}
           >
+              {
+                  redirect ? 
+                  <Redirect  to={`/course/${path}`}/>:
+                  null
+              }
               <div className="card-image">
                   <img src={img} alt=""/>
               </div>

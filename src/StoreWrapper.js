@@ -23,7 +23,7 @@ const config = {
   
   window._store = store
   
-  export default class StoreWrapper extends React.PureComponent {
+  export default class StoreWrapper extends React.Component {
     render() {
       return (
         <Provider store={store}>

@@ -22,3 +22,16 @@
     width: 10%;
     padding-right: 3%;
 }
+
+.links {
+    margin: 20px;
+}
+
+.links *{
+    color: lightgray;
+    text-decoration: none;
+    outline: none;
+    align-self: center;
+    padding: 10px;
+    margin-top: 15px;
+}
