@@ -1,10 +1,19 @@
+/* eslint-disable react/no-unused-state */
 import React from 'react'
 
-import classNames from 'classnames'
+import { Icon } from 'react-fa'
 
 import styles from './styles.css'
 
 export default class CourseView extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+        isSearchActive: true,
+    }
+  }
+
   onChange(e) {
     const { target } = e
     const { value } = target
@@ -14,22 +23,26 @@ export default class CourseView extends React.Component {
     findCourse(value)
   }
 
-  openSearch(e) {}
+  openSearch(e) {
+      const { isSearchActive } = this.state
+      this.setState({
+          isSearchActive: !isSearchActive
+      })
+  }
 
   render() {
+    const { isSearchActive } = this.state
+
     return (
-      <div className={'container'}>
+      <div className={ `course-search container ${isSearchActive ? 'active' : ''}` }>
         <input
-          type="text"
-          onChange={e => this.onChange(e)}
-          class="input"
-          placeholder="Search"
+          type='text'
+          onChange={ e => this.onChange(e) }
+          className={ `input ${isSearchActive ? 'active' : ''}` }
+          placeholder='Search'
+          aria-hidden='true'
         />
-        <i
-          class="fa fa-search"
-          onClick={e => this.openSearch(e)}
-          aria-hidden="true"
-        ></i>
+        <Icon name='search' onClick={ e => this.openSearch(e) } />
       </div>
     )
   }

@@ -1,13 +1,54 @@
-import React from 'react' 
+import React from 'react'
+
+import classNames from 'classnames'
 
 import { Link } from 'react-router-dom'
 
+const preparedLinks = [
+    {
+        name: 'Main',
+    },
+    {
+        name: 'Courses'
+    }
+]
+
 export default class PageSwithcer extends React.Component {
-    render() { 
-        return(
-          <div className="links">
-            <Link to='/'> Main </Link>
-            <Link to='/courses'> Courses </Link>
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            page: 'Main',
+        }
+    }
+
+    openLink(e, name) {
+        this.setState({ page: name })
+    }
+
+    prepareLinks(linksData) {
+        const links = []
+
+        linksData.forEach(link => {
+            const { name } = link
+            const { page } = this.state
+
+            const linkClass = classNames({
+                'link': true,
+                'link-active': page === name
+            })
+
+            links.push(
+              <Link to={ `/${name}` } onClick={ (e) => this.openLink(e, name) } className={ linkClass }>{ name }</Link>
+            )
+        })
+        return links
+    }
+
+    render() {
+        return (
+          <div className='links'>
+            { this.prepareLinks(preparedLinks) }
           </div>
         )
     }

@@ -3,6 +3,10 @@
   "plugins": ["prettier"],
   "rules": {
     "semi": ["error", "never"],
+    "quotes": [2, "single", { "avoidEscape": true }],
+    "jsx-quotes": ["error", "prefer-single"],
+    "react/prop-types": 0,
+    "react/jsx-curly-spacing": [2, { "when": "always" }],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prefer-stateless-function": [0, { "ignorePureComponents": 1 }]
   }
