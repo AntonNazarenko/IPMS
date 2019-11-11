@@ -11,7 +11,10 @@
 
 .logo {
   align-self: center;
-  padding-left: 3%;
+  padding-left: 5%;
+  font-family: 'Gugi', cursive;
+  letter-spacing: .3em;
+  color: white;
 }
 
 .side-menu {

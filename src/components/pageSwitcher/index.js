@@ -1,15 +1,13 @@
 import React from 'react'
-
 import classNames from 'classnames'
-
 import { Link } from 'react-router-dom'
 
 const preparedLinks = [
     {
-        name: 'Main',
+        name: 'Courses',
     },
     {
-        name: 'Courses'
+        name: 'News'
     }
 ]
 
@@ -18,7 +16,7 @@ export default class PageSwithcer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            page: 'Main',
+            page: 'Courses',
         }
     }
 
