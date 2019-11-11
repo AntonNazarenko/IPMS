@@ -6,7 +6,14 @@ import styles from './index.css'
 export default class Navbar extends React.Component {
 
     render () {
-        const { iconName, to } = this.props
+        const { iconName, to, onClick } = this.props
+
+        if(!to) {
+          return(
+          
+            <Icon className='logout' name={ `${ iconName }`} onClick={() => onClick()} />
+          )
+        }
         return (
           <>
             <Link to={ `/${ to }` } className='navbar-link'> 

@@ -11,10 +11,16 @@ function  reducer (state = getInitialState(), action = {}){
     // eslint-disable-next-line default-case
     switch(type) {
         case 'SET_AUTH': {
-            console.log(payload)
             return {
                 ...state, 
                 token: payload
+            }
+        }
+
+        case 'AUTH_DELETE': {
+            return {
+                ...state, 
+                token: null
             }
         }
 
