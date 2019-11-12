@@ -25,9 +25,10 @@ const config = {
   
   export default class StoreWrapper extends React.Component {
     render() {
+      const { children } = this.props
       return (
-        <Provider store={store}>
-          {this.props.children}
+        <Provider store={ store }>
+          { children }
         </Provider>
       )
     }

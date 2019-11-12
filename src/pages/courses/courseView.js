@@ -15,11 +15,11 @@ export default class CourseView  extends React.Component{
             if (!visible) return
             this.courses.push(
               <CourseCard
-                price={price}
-                img={img}
-                name={name}
-                rate={rate}
-                time={time}
+                price={ price }
+                img={ img }
+                name={ name }
+                rate={ rate }
+                time={ time }
               />)
         })
     }
@@ -29,7 +29,7 @@ export default class CourseView  extends React.Component{
         return (
           <>
             <CourseSearch />
-            <div className="course-container">
+            <div className='course-container'>
               {this.courses} 
             </div>
           </>
