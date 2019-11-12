@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: column;
     width: 20%;
-    height: 25%;
+    height: 35%;
     justify-content: space-between;
     align-items: center;
 }
@@ -67,4 +67,8 @@ input:hover {
 
 .sign-up-link:visited { 
     color: white;
+}
+
+.google-btn{
+    height: 10%;
 }
