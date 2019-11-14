@@ -58,10 +58,10 @@ function reducer(state = getInitialState(), action = {}) {
     const { type, payload } = action
     // eslint-disable-next-line no-underscore-dangle
     const _state = { ...state }
-    switch (type) {
+    switch(type) {
         case 'SEARCH_COURSE': {
-            for (let i = 0; i < _state.courses.length; i += 1) {
-                if (_state.courses[i].name.toLowerCase().indexOf(payload.toLowerCase()) === -1) {
+            for(let i = 0; i < _state.courses.length; i += 1) {
+                if(_state.courses[i].name.toLowerCase().indexOf(payload.toLowerCase()) === -1) {
                     _state.courses[i].visible = false
                 } else {
                     _state.courses[i].visible = true

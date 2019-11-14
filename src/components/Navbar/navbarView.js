@@ -1,9 +1,10 @@
 import  React from 'react'
 import NavbarButton from '../NavbarButton'
+// eslint-disable-next-line no-unused-vars
 import styles from './index.css'
 
 export default class Navbar extends React.Component {
-    render () {
+    render() {
         const { logout } = this.props
         return (
           <div className='navbar'>
@@ -14,7 +15,7 @@ export default class Navbar extends React.Component {
                 <NavbarButton iconName='user' to='profile' />
               </div>
               <div className='settings'>
-                <NavbarButton iconName='sign-out' onClick={()=>logout()} />
+                <NavbarButton iconName='sign-out' onClick={ ()=>logout() } />
               </div>
             </div>
           </div>
