@@ -1,6 +1,8 @@
 import React from 'react'
 import classNames from 'classnames'
 import { Link } from 'react-router-dom'
+// eslint-disable-next-line no-unused-vars
+import styles from './index.css'
 
 const preparedLinks = [
     {
@@ -37,7 +39,7 @@ export default class PageSwithcer extends React.Component {
             })
 
             links.push(
-              <Link to={ `/${name}` } onClick={ (e) => this.openLink(e, name) } className={ linkClass }>{ name }</Link>
+                <Link to={ `/${name}` } onClick={ (e) => this.openLink(e, name) } className={ linkClass }>{ name }</Link>
             )
         })
         return links
@@ -45,9 +47,9 @@ export default class PageSwithcer extends React.Component {
 
     render() {
         return (
-          <div className='links'>
-            { this.prepareLinks(preparedLinks) }
-          </div>
+            <div className='links'>
+                { this.prepareLinks(preparedLinks) }
+            </div>
         )
     }
 }

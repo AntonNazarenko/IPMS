@@ -4,6 +4,7 @@
   "rules": {
     "semi": ["error", "never"],
     "quotes": [2, "single", { "avoidEscape": true }],
+    "keyword-spacing": [2, { "overrides": { "if": { "after": false }, "for": { "after": false }, "while": { "after": false }, "switch": { "after": false } } }],
     "jsx-quotes": ["error", "prefer-single"],
     "react/prop-types": 0,
     "react/jsx-curly-spacing": [2, { "when": "always" }],
