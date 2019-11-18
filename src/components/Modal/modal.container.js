@@ -10,9 +10,13 @@ const mapDispatchToProps = dispatch => {
     return {
         login(login, pass) {
             dispatch({ type: 'SET_AUTH', payload: '213QWESAD' })
-            axios.post('/login', {
-                login,
-                pass
+            dispatch({
+                type: 'REST',
+                meta: {
+                    url: 'https://LightcoralBlissfulPrintablecharacter--five-nine.repl.co/login',
+                    method: 'POST', // axios method
+                    handler: 'LOGIN',
+                },
             })
         }
     }

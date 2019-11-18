@@ -17,6 +17,10 @@ function  reducer(state = getInitialState(), action = {}){
             }
         }
 
+        case 'LOGIN_POST_RES': {
+            console.log(payload)
+        }
+
         case 'AUTH_DELETE': {
             return {
                 ...state, 

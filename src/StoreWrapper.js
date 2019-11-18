@@ -2,9 +2,11 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { routerReducer, routerMiddleware } from 'react-router-redux'
 import { configureStore } from './redux'
+import sagas from './redux/saga'
 
 const config = {
-    development: true
+    development: true,
+    sagas,
   }
   
   const optionalReducers = {

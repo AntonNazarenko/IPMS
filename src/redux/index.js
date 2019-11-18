@@ -1,9 +1,13 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+
+import createSagaMiddleware from 'redux-saga'
 
 import reducer from './reducers'
 import actions from './actions'
+
+const sagaMiddleware = createSagaMiddleware()
 
 export function configureStore(
   options = {},
@@ -11,11 +15,35 @@ export function configureStore(
   optionalMiddleware = null,
 ) {
 
+  const {
+    development = false,
+  } = options
+
+  let middleware = [
+    sagaMiddleware,
+  ]
+
+  if(optionalMiddleware) {
+    middleware = [...middleware, ...optionalMiddleware]
+  }
+
+  const composeEnhancers = development
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+    : compose
+
+  const sagas = options.sagas ? options.sagas : function* saga() {}
+
+  const enhancers = composeEnhancers(
+    applyMiddleware(...middleware),
+  )
+
   const store = createStore(
     reducer(optionalReducers),
-    // eslint-disable-next-line no-underscore-dangle 
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+    {},
+    enhancers,
   )
+
+  sagaMiddleware.run(sagas)
 
   return store
 }
