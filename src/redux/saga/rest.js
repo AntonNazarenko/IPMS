@@ -13,11 +13,11 @@ function getState(state) {
 
 function* onREST(action = {}) {
   const {
-     payload = {},
      meta = {},
   } = action
-
+  const { payload } = meta
   try {
+    console.log(payload)
     const res = yield call(axios, {
       method: meta.method || payload.method,
       url: meta.url || payload.path,

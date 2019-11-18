@@ -79,6 +79,13 @@ function reducer(state = getInitialState(), action = {}) {
             }
         }
 
+        case 'COURSES_GET_RES': {
+            _state.courses = payload.courses
+            return { 
+                ..._state,
+            }
+        }
+
         default: {
             return getInitialState()
         }

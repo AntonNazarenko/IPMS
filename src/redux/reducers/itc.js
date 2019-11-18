@@ -10,16 +10,29 @@ function  reducer(state = getInitialState(), action = {}){
 
     // eslint-disable-next-line default-case
     switch(type) {
-        case 'SET_AUTH': {
+        case 'LOGIN_POST_RES': {
+            if(payload.toLowerCase() !== 'error') {
+                return {
+                    ...state, 
+                    token: payload
+                }
+            }
+            return {
+                ...state
+            }
+        }
+
+       case 'REG_POST_RES': {
+        if(payload.toLowerCase() !== 'error') {
             return {
                 ...state, 
                 token: payload
             }
         }
-
-        case 'LOGIN_POST_RES': {
-            console.log(payload)
+        return {
+            ...state
         }
+    }
 
         case 'AUTH_DELETE': {
             return {

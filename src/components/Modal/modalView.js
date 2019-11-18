@@ -26,8 +26,8 @@ export default class Navbar extends React.Component {
   }
 
   render() {
-    const { login } = this.props
-    const { page, email, password } = this.state
+    const { login, register } = this.props
+    const { page, email, password, rePass } = this.state
     if(page === 'login') {
       return (
         <div className='modal-container'>
@@ -64,7 +64,7 @@ export default class Navbar extends React.Component {
           <input
             className='login-button'
             type='button'
-            onClick={ () => login(email, password) }
+            onClick={ () => register(email, password, rePass) }
             value='Sign-up'
           />
           <GoogleLogin buttonText='Sign up with Google' theme='dark' />

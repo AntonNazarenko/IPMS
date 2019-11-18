@@ -10,4 +10,19 @@ const mapStateToProps = (state = {}, ownProps = {}) => {
   }
 }
 
-export default connect(mapStateToProps, null)(courseView)
+const mapDispatchToProps = dispatch => {
+  return {
+    loadCourses() {
+      dispatch({
+        type: 'REST',
+        meta: {
+            url: 'https://LightcoralBlissfulPrintablecharacter--five-nine.repl.co/courses',
+            method: 'GET', // axios method
+            handler: 'COURSES',
+        },
+    })
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(courseView)
