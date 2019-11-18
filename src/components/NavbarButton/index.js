@@ -1,17 +1,17 @@
 import  React from 'react'
 import { Icon } from 'react-fa'
 import { Link } from 'react-router-dom'
+// eslint-disable-next-line no-unused-vars
 import styles from './index.css'
 
 export default class Navbar extends React.Component {
 
-    render () {
+    render() {
         const { iconName, to, onClick } = this.props
 
         if(!to) {
-          return(
-          
-            <Icon className='logout' name={ `${ iconName }`} onClick={() => onClick()} />
+          return (
+            <Icon className='logout' name={ `${ iconName }` } onClick={ () => onClick() } />
           )
         }
         return (

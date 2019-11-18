@@ -1,0 +1,18 @@
+.links {
+  margin: 20px;
+  font-size: 1.3em;
+}
+
+.links * {
+  color: lightgray;
+  text-decoration: none;
+  outline: none;
+  align-self: center;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.link-active {
+    color: white;
+    border-bottom: 1.5px solid lightgray;
+}
