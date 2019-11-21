@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => {
       dispatch({
         type: 'REST',
         meta: {
-            url: 'https://LightcoralBlissfulPrintablecharacter--five-nine.repl.co/courses',
+            url: 'courses',
             method: 'GET', // axios method
             handler: 'COURSES',
         },

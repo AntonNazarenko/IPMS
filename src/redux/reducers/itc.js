@@ -11,10 +11,13 @@ function  reducer(state = getInitialState(), action = {}){
     // eslint-disable-next-line default-case
     switch(type) {
         case 'LOGIN_POST_RES': {
-            if(payload.toLowerCase() !== 'error') {
+            const { token, email, purchasedCourses } = payload
+            if(token && email) {
                 return {
                     ...state, 
-                    token: payload
+                    token,
+                    email, 
+                    purchasedCourses
                 }
             }
             return {
@@ -23,14 +26,25 @@ function  reducer(state = getInitialState(), action = {}){
         }
 
        case 'REG_POST_RES': {
-        if(payload.toLowerCase() !== 'error') {
+        const { token, email, purchasedCourses } = payload
+        if(token && email) {
             return {
                 ...state, 
-                token: payload
+                token,
+                email, 
+                purchasedCourses
             }
         }
         return {
             ...state
+        }
+    }
+
+    case 'COURSE_PURCHASE_POST_RES': {
+        alert(payload.msg)
+        return { 
+            ...state,
+            purchasedCourses: payload.courses
         }
     }
 

@@ -1,0 +1,31 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.avatar-container { 
+    width: 200px;
+    height: 200px;
+    background-image: url('https://pbs.twimg.com/profile_images/378800000113870212/d9128db9e4f6f1aec18eee239f5202c4_400x400.jpeg');
+    background-size: cover ;
+}
+
+.info-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+.username { 
+    
+}
+.info-container * {
+    line-height: 2em;
+    letter-spacing: .2em;
+    list-style-type: none;
+}
+
+ul {
+    list-style-type: none;
+}

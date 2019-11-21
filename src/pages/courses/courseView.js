@@ -19,7 +19,7 @@ export default class CourseView extends React.Component {
       courses = {},
     } = this.props
 
-    const coursesArray = courses.courses
+    const coursesArray = courses.courses || []
     this.courses = []
     coursesArray.forEach(course => {
       const { price, img, name, rate, time, visible } = course

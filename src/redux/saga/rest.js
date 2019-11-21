@@ -5,7 +5,7 @@ import {
   takeEvery, put, call, select,
 } from 'redux-saga/effects'
 
-axios.defaults.baseURL = 'https://LightcoralBlissfulPrintablecharacter--five-nine.repl.co'
+axios.defaults.baseURL = 'https://LinedSorrowfulPostscript--five-nine.repl.co/'
 
 function getState(state) {
   return state
@@ -15,12 +15,11 @@ function* onREST(action = {}) {
   const {
      meta = {},
   } = action
-  const { payload } = meta
+  const { payload = {} } = meta
   try {
-    console.log(payload)
     const res = yield call(axios, {
       method: meta.method || payload.method,
-      url: meta.url || payload.path,
+      url: `${axios.defaults.baseURL}${meta.url || payload.path }`,
       data: payload.body || payload,
       params: payload.params,
     })

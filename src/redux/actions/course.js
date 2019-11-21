@@ -12,10 +12,25 @@ function SearchValue(value) {
     }
 }
 
+function GetCourse(id) {
+    return {
+        type: 'REST',
+        meta: {
+           url: `course/${id}`,
+           method: 'GET', // axios method
+           handler: 'COURSE_DATA',
+        } 
+    }
+}
+
 export {
     SearchCourse
 }
 
 export {
     SearchValue
+}
+
+export {
+    GetCourse
 }

@@ -18,7 +18,7 @@ export default class CourseSearchView extends React.Component {
     const { value } = target
     const { findCourse, saveInputValue } = this.props
 
-    saveInputValue(value)
+    //saveInputValue(value)
     findCourse(value)
   }
 

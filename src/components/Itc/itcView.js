@@ -7,6 +7,8 @@ import CoursePage from '../../pages/Courses'
 import CoursePreviewPage from '../../pages/CoursePreview'
 import PageSwithcer from '../PageSwitcher'
 import LoginPage from '../../pages/LoginPage'
+import ProfilePage from '../../pages/ProfilePage'
+
 
 export default class Itc extends React.Component {
     
@@ -29,6 +31,7 @@ export default class Itc extends React.Component {
             <Redirect exact from='' to='/Courses' />
             <Route exec path='/courses' component={ CoursePage } />
             <Route path='/course' component={ CoursePreviewPage } />
+            <Route path='/profile' component={ ProfilePage } />
           </div>
         )
     }

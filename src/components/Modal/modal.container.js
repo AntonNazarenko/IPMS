@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => {
             dispatch({
                 type: 'REST',
                 meta: {
-                    url: 'https://LightcoralBlissfulPrintablecharacter--five-nine.repl.co/login',
+                    url: 'login',
                     method: 'POST', // axios method
                     handler: 'LOGIN',
                     payload: {
@@ -28,7 +28,7 @@ const mapDispatchToProps = dispatch => {
             dispatch({
                 type: 'REST',
                 meta: {
-                    url: 'https://LightcoralBlissfulPrintablecharacter--five-nine.repl.co/register',
+                    url: 'register',
                     method: 'POST', // axios method
                     handler: 'REG',
                     payload: {

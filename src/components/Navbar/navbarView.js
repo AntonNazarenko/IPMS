@@ -15,7 +15,7 @@ export default class Navbar extends React.Component {
                 <NavbarButton iconName='user' to='profile' />
               </div>
               <div className='settings'>
-                <NavbarButton iconName='sign-out' onClick={ ()=>logout() } />
+                <NavbarButton iconName='sign-out' onClick={ () => logout() } />
               </div>
             </div>
           </div>

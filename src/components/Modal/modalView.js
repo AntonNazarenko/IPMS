@@ -25,6 +25,19 @@ export default class Navbar extends React.Component {
     this.setState({ page })
   }
 
+  onGoogleSuccess(data, isRegistration = false) {
+    console.log(data)
+    const { login, register } = this.props
+    const { profileObj } = data
+    const { email, googleId } = profileObj
+
+    if(isRegistration) {
+      return register(email, googleId, googleId)
+    }
+
+    return login(email, googleId)
+  }
+
   render() {
     const { login, register } = this.props
     const { page, email, password, rePass } = this.state
@@ -42,7 +55,7 @@ export default class Navbar extends React.Component {
               onClick={ () => login(email, password) }
               value='Sign-in'
             />
-            <GoogleLogin theme='dark' />
+            <GoogleLogin onSuccess={ (response)=>this.onGoogleSuccess(response, false) } clientId='318628335602-jvjc45713h8c3vmpkrdvo3dbch09m3vs.apps.googleusercontent.com' theme='dark' />
             <span className='sign-up'>
               don&apos;t have account yet?
               { ' ' }
@@ -67,7 +80,7 @@ export default class Navbar extends React.Component {
             onClick={ () => register(email, password, rePass) }
             value='Sign-up'
           />
-          <GoogleLogin buttonText='Sign up with Google' theme='dark' />
+          <GoogleLogin onSuccess={ (response)=>this.onGoogleSuccess(response, true) } clientId='318628335602-jvjc45713h8c3vmpkrdvo3dbch09m3vs.apps.googleusercontent.com' buttonText='Sign up with Google' theme='dark' />
           <span className='sign-up'>
             already have an account?
             { ' ' }
