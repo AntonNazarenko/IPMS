@@ -8,11 +8,37 @@ import modalView from './modalView'
 
 const mapDispatchToProps = dispatch => {
     return {
-        login(login, pass) {
-            dispatch({ type: 'SET_AUTH', payload: '213QWESAD' })
-            axios.post('/login', {
-                login,
-                pass
+        login(email, pass) {
+            dispatch({
+                type: 'REST',
+                meta: {
+                    url: 'login',
+                    method: 'POST', // axios method
+                    handler: 'LOGIN',
+                    payload: {
+                        params: {
+                            email,
+                            pass
+                        }
+                    }
+                },
+            })
+        }, 
+        register(email, pass, rePass) { 
+            dispatch({
+                type: 'REST',
+                meta: {
+                    url: 'register',
+                    method: 'POST', // axios method
+                    handler: 'REG',
+                    payload: {
+                        params: {
+                            email,
+                            pass,
+                            rePass
+                        }
+                    }
+                },
             })
         }
     }

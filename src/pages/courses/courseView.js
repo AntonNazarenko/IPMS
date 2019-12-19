@@ -4,11 +4,22 @@ import CourseSearch from '../../components/CourseSearch'
 
 export default class CourseView extends React.Component {
 
+  constructor(props) {
+    super(props)
+    const { loadCourses } = this.props
+    loadCourses()
+  }
+
+  shouldComponentUpdate(nextProps) {
+    return true
+  }
+
   prepareCourses() {
     const {
-      courses = {}
+      courses = {},
     } = this.props
-    const coursesArray = courses.courses
+
+    const coursesArray = courses.courses || []
     this.courses = []
     coursesArray.forEach(course => {
       const { price, img, name, rate, time, visible } = course
