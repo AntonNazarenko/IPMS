@@ -7,8 +7,19 @@ import styles from './index.css'
 export default class LoginPage extends React.Component{
     
     render() {
-        let { purchasedCourses, email, getCourse } = this.props
+        console.log(this.props)
+        let { purchasedCourses, passedCourses, email, getCourse } = this.props
         purchasedCourses = purchasedCourses.map( course => {
+            const coursePath = course.split(' ').join('-')
+            return (
+                <ul  onClick={()=> getCourse(coursePath)}>
+                    <Link to={`course/${coursePath}`} style={{color:'lightGray'}}>
+                        {course}
+                    </Link>
+                </ul>
+            )
+        })
+        passedCourses = passedCourses.map( course => {
             const coursePath = course.split(' ').join('-')
             return (
                 <ul  onClick={()=> getCourse(coursePath)}>
@@ -32,6 +43,10 @@ export default class LoginPage extends React.Component{
                 Purchased Courses:
                 <li className='courses'>
                     { purchasedCourses }
+                </li>
+                You have certificates:
+                <li className='courses'>
+                    { passedCourses }
                 </li>
             </div>
           </div>

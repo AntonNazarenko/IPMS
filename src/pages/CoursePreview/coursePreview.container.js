@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import coursePreview from './coursePreviewView'
 import { dispatch } from 'rxjs/internal/observable/pairs'
 
+import { AddCertificate } from '../../redux/actions/course'
+
 // eslint-disable-next-line no-unused-vars
 const mapStateToProps = (state = {}, ownProps = {}) => {
   const { course, itc } = state
@@ -30,6 +32,9 @@ const mapDispatchToProps = dispatch => {
                 type: 'COURSE_CHANGE_PAGE',
                 payload: page
             })
+        },
+        addCertificate(name, email) {
+            dispatch(AddCertificate(name, email))
         }
     }
 }

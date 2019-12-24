@@ -23,6 +23,23 @@ function GetCourse(id) {
     }
 }
 
+function AddCertificate(name, email) {
+    return {
+        type: 'REST',
+        meta: {
+           url: 'add-certificate',
+           method: 'POST', // axios method
+           handler: 'ADD_CERTIFICATE',
+           payload: {
+               params: {
+                    email,
+                    name, 
+                }
+           }
+        } 
+    }
+}
+
 export {
     SearchCourse
 }
@@ -33,4 +50,8 @@ export {
 
 export {
     GetCourse
+}
+
+export {
+    AddCertificate
 }

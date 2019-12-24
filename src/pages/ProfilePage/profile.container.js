@@ -6,9 +6,10 @@ import { GetCourse } from '../../redux/actions/course'
 // eslint-disable-next-line no-unused-vars
 const mapStateToProps = (state = {}, ownProps = {}) => {
   const { itc } = state
-  const { purchasedCourses, email } = itc
+  const { purchasedCourses, email, passedCourses } = itc
   return {
     purchasedCourses,
+    passedCourses,
     email
   }
 }

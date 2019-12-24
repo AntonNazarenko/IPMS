@@ -11,13 +11,14 @@ function  reducer(state = getInitialState(), action = {}){
     // eslint-disable-next-line default-case
     switch(type) {
         case 'LOGIN_POST_RES': {
-            const { token, email, purchasedCourses } = payload
+            const { token, email, purchasedCourses, passedCourses } = payload
             if(token && email) {
                 return {
                     ...state, 
                     token,
                     email, 
-                    purchasedCourses
+                    purchasedCourses,
+                    passedCourses
                 }
             }
             return {
@@ -26,13 +27,14 @@ function  reducer(state = getInitialState(), action = {}){
         }
 
        case 'REG_POST_RES': {
-        const { token, email, purchasedCourses } = payload
+        const { token, email, purchasedCourses, passedCourses } = payload
         if(token && email) {
             return {
                 ...state, 
                 token,
                 email, 
-                purchasedCourses
+                purchasedCourses,
+                passedCourses
             }
         }
         return {
@@ -47,6 +49,14 @@ function  reducer(state = getInitialState(), action = {}){
             purchasedCourses: payload.courses
         }
     }
+
+    case 'ADD_CERTIFICATE_POST_RES': {
+            alert(payload.msg)
+            return { 
+                ...state,
+                passedCourses: payload.courses
+            }
+        }
 
         case 'AUTH_DELETE': {
             return {
