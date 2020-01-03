@@ -4,6 +4,7 @@ import coursePreview from './coursePreviewView'
 import { dispatch } from 'rxjs/internal/observable/pairs'
 
 import { AddCertificate } from '../../redux/actions/course'
+import { PostComment } from '../../redux/actions/course'
 
 // eslint-disable-next-line no-unused-vars
 const mapStateToProps = (state = {}, ownProps = {}) => {
@@ -11,8 +12,7 @@ const mapStateToProps = (state = {}, ownProps = {}) => {
   const { email = '', purchasedCourses = [] } = itc
   const { currentCourse = {}, currentPage ={ } } = course
   const { Preview = {} } =  currentCourse
-  const { name = '' } = Preview
-
+  const { name = '' } = Preview   
   let isCurrentCoursePurchased = false
   if(purchasedCourses.includes(name.split('-').join(' '))) isCurrentCoursePurchased = true
 
@@ -35,6 +35,9 @@ const mapDispatchToProps = dispatch => {
         },
         addCertificate(name, email) {
             dispatch(AddCertificate(name, email))
+        },
+        postComment(name, text, username) {
+            dispatch(PostComment(name, text, username))
         }
     }
 }

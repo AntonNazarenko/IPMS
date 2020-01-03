@@ -4,10 +4,12 @@ import { Route } from 'react-router'
 import { Redirect } from 'react-router-dom'
 import Navbar from '../Navbar'
 import CoursePage from '../../pages/Courses'
+import AddingCourse from '../../pages/AddingCourse'
 import CoursePreviewPage from '../../pages/CoursePreview'
 import PageSwithcer from '../PageSwitcher'
 import LoginPage from '../../pages/LoginPage'
 import ProfilePage from '../../pages/ProfilePage'
+
 
 
 export default class Itc extends React.Component {
@@ -30,6 +32,7 @@ export default class Itc extends React.Component {
             <PageSwithcer />
             <Redirect exact from='' to='/Courses' />
             <Route exec path='/courses' component={ CoursePage } />
+            <Route path='/create' component={ AddingCourse } />
             <Route path='/course' component={ CoursePreviewPage } />
             <Route path='/profile' component={ ProfilePage } />
           </div>

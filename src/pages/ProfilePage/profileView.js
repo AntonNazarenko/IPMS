@@ -23,9 +23,9 @@ export default class LoginPage extends React.Component{
             const coursePath = course.split(' ').join('-')
             return (
                 <ul  onClick={()=> getCourse(coursePath)}>
-                    <Link to={`course/${coursePath}`} style={{color:'lightGray'}}>
+                    <a href='https://aakinshin.net/img/posts/dotnet/ms-mcp/mcp.png' target='_blank' style={{color:'lightGray'}}>
                         {course}
-                    </Link>
+                    </a>
                 </ul>
             )
         })

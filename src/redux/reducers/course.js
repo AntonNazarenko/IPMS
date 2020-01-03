@@ -7,7 +7,6 @@ function getInitialState() {
 function reducer(state = getInitialState(), action = {}) {
     const { type, payload } = action
     // eslint-disable-next-line no-underscore-dangle
-    console.log(payload)
     switch(type) {
         case 'SEARCH_COURSE': {
             const _state = { ...state }
@@ -49,6 +48,19 @@ function reducer(state = getInitialState(), action = {}) {
             return {
                 ...state,
                 currentPage: payload
+            }
+        }
+
+        case 'POST_COMMENT_POST_RES': {
+            const { comment } = payload
+            const comments =   [...state.currentCourse.comments]
+            comments.push(comment)
+            return { 
+                ...state,
+                currentCourse: {
+                    ...state.currentCourse,
+                    comments
+                }
             }
         }
 

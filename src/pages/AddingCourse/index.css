@@ -1,0 +1,18 @@
+.form-item { 
+    padding-bottom: 15px;
+    list-style: none;
+}
+
+button { 
+    margin-right: 10px;
+}
+
+.test-input {
+    height: 30px;
+    border: none;
+    background: #602080; 
+    color: white;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}

@@ -51,23 +51,23 @@ function  reducer(state = getInitialState(), action = {}){
     }
 
     case 'ADD_CERTIFICATE_POST_RES': {
-            alert(payload.msg)
-            return { 
-                ...state,
-                passedCourses: payload.courses
-            }
+        alert(payload.msg)
+        return { 
+            ...state,
+            passedCourses: payload.courses
         }
+    }
 
-        case 'AUTH_DELETE': {
-            return {
-                ...state, 
-                token: null
-            }
+    case 'AUTH_DELETE': {
+        return {
+            ...state, 
+            token: null
         }
+    }
 
-        default: {
-            return state
-        }
+    default: {
+        return state
+    }
             
     }
 }

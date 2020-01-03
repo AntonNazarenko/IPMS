@@ -1,0 +1,19 @@
+.itc-course-comment-area { 
+    display: flex;
+    flex-direction: row;
+    row-gap: 20px;
+    margin-bottom: 50px;
+}
+
+.comment-container { 
+    color: white;
+}
+
+.comment-username {
+    text-transform: uppercase;
+    color: lightgray;
+}
+
+.comment-text { 
+    border-bottom: 1px solid lightgray;
+}

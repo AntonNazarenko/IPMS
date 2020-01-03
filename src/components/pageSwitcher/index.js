@@ -9,7 +9,7 @@ const preparedLinks = [
         name: 'Courses',
     },
     {
-        name: 'News'
+        name: 'Create'
     }
 ]
 
